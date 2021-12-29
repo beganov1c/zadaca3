@@ -1,6 +1,6 @@
-.greenProgress{
+.zeleniProgress{
     -fx-accent: green;
 }
-.redProgress{
+.crveniProgress{
     -fx-accent: red;
 }

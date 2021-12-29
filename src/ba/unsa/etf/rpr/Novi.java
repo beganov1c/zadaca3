@@ -24,11 +24,11 @@ public class Novi {
 
             progressBar.setProgress(n.length()/10.);
             if ((n.length()/10.)<1) {
-                progressBar.getStyleClass().removeAll("greenProgress");
-                progressBar.getStyleClass().add("redProgress");
+                progressBar.getStyleClass().removeAll("zeleniProgress");
+                progressBar.getStyleClass().add("crveniProgress");
             } else {
-                progressBar.getStyleClass().removeAll("redProgress");
-                progressBar.getStyleClass().add("greenProgress");
+                progressBar.getStyleClass().removeAll("crveniProgress");
+                progressBar.getStyleClass().add("zeleniProgress");
 
             }
         });
