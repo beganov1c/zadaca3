@@ -7,9 +7,3 @@
 .greenClass{
     -fx-background-color:green;
 }
-.greenProgress{
-    -fx-accent: green;
-}
-.redProgress{
-    -fx-accent: red;
-}
