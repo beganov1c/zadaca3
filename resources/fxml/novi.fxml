@@ -24,7 +24,7 @@
         <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
             <buttons>
                 <Button defaultButton="true" mnemonicParsing="false" onAction="#okClick" text="Ok" />
-                <Button fx:id="cancelB" cancelButton="true" mnemonicParsing="false" onAction="#cancelClick" text="Cancel" />
+                <Button fx:id="cancelBtn" cancelButton="true" mnemonicParsing="false" onAction="#cancelClick" text="Cancel" />
             </buttons>
         </ButtonBar>
     </children>
