@@ -1,15 +1,15 @@
-.crvena{
+.redClass{
     -fx-background-color:red;
 }
-.plava{
+.blueClass{
     -fx-background-color:blue;
 }
-.zelena{
+.greenClass{
     -fx-background-color:green;
 }
-.zeleniProgress{
+.greenProgress{
     -fx-accent: green;
 }
-.crveniProgress{
+.redProgress{
     -fx-accent: red;
 }
