@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import javafx.collections.*?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import java.lang.String?>
+<?import java.net.URL?>
 <GridPane prefHeight="356.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller">
     <stylesheets>
         <URL value="@/css/izgled.css" />
