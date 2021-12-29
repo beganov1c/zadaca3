@@ -24,17 +24,16 @@ public class Novi {
 
     @FXML
     public void initialize() {
-        fldIme.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
-                progressBar.setProgress(n.length()/10.);
-                if ((n.length()/10.)<1) {
-                    progressBar.getStyleClass().removeAll("zeleniProgress");
-                    progressBar.getStyleClass().add("crveniProgress");
-                } else {
-                    progressBar.getStyleClass().removeAll("crveniProgress");
-                    progressBar.getStyleClass().add("zeleniProgress");
-                }
+        fldIme.textProperty().addListener((observableValue, o, n) -> {
+
+            progressBar.setProgress(n.length()/10.);
+            if ((n.length()/10.)<1) {
+                progressBar.getStyleClass().removeAll("greenProgress");
+                progressBar.getStyleClass().add("redProgress");
+            } else {
+                progressBar.getStyleClass().removeAll("redProgress");
+                progressBar.getStyleClass().add("greenProgress");
+
             }
         });
     }
@@ -49,16 +48,21 @@ public class Novi {
 
     public void okClick(ActionEvent actionEvent) {
         if (!provjeri(fldIme.getText())) {
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Neispravno ime");
             alert.setHeaderText("Neispravno ime studenta");
             alert.setContentText("Ime studenta treba biti najmanje 10 karaktera dugačko");
             alert.show();
-        }else{
+
+        }
+        else {
+
             student=fldIme.getText();
-            dodajStudentaIme(student);//dodavanje u listu
+            dodajStudentaIme(student);
             Stage stage = (Stage) cancelBtn.getScene().getWindow();
             stage.close();
+
         }
 
     }

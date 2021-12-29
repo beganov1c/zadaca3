@@ -26,60 +26,49 @@ public class Controller  {
     public ListView lvStudents;
     public GridPane gridPane;
 
-    private Novi noviController;
-    private String color = "Default";
-
 
     private StudentiModel studentiModel = new StudentiModel();
 
 
     @FXML
     public void initialize() {
-        lvStudents.setItems(StudentiModel.expandTo(((int)sliderStudents.getValue()),fldText.getText()));
-        choiceColor.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
-                if (n.equals("Crvena")) {
-                    for(Node but:gridPane.getChildren()) {
-                        but.getStyleClass().removeAll("plava");
-                        but.getStyleClass().removeAll("zelena");
-                        but.getStyleClass().add("crvena");
-                    }
-                } else if(n.equals("Zelena")){
-                    for(Node but:gridPane.getChildren()) {
-                        but.getStyleClass().removeAll("plava");
-                        but.getStyleClass().removeAll("crvena");
-                        but.getStyleClass().add("zelena");
-                    }
 
-                } else if(n.equals("Plava")){
-                    for(Node but:gridPane.getChildren()) {
-                        but.getStyleClass().removeAll("crvena");
-                        but.getStyleClass().removeAll("zelena");
-                        but.getStyleClass().add("plava");
-                    }
-                }else{
-                    for(Node but:gridPane.getChildren()) {
-                        but.getStyleClass().removeAll("plava");
-                        but.getStyleClass().removeAll("zelena");
-                        but.getStyleClass().removeAll("crvena");
-                    }
+        lvStudents.setItems(studentiModel.expandTo(((int)sliderStudents.getValue()),fldText.getText()));
+        choiceColor.getSelectionModel().selectedItemProperty().addListener( (observableValue, o, n) -> {
+            if (n.equals("Crvena")) {
+                for(Node but:gridPane.getChildren()) {
+                    but.getStyleClass().removeAll("blue");
+                    but.getStyleClass().removeAll("green");
+                    but.getStyleClass().add("red");
+                }
+            }
+            else if(n.equals("Plava")) {
+                for(Node but:gridPane.getChildren()) {
+                    but.getStyleClass().removeAll("red");
+                    but.getStyleClass().removeAll("green");
+                    but.getStyleClass().add("blue");
+                }
+            }
+            else if(n.equals("Zelena")){
+                for(Node but:gridPane.getChildren()) {
+                    but.getStyleClass().removeAll("blue");
+                    but.getStyleClass().removeAll("red");
+                    but.getStyleClass().add("green");
+                }
+
+            }
+            else {
+                for(Node but:gridPane.getChildren()) {
+                    but.getStyleClass().removeAll("blue");
+                    but.getStyleClass().removeAll("green");
+                    but.getStyleClass().removeAll("red");
                 }
             }
         });
 
-        sliderStudents.valueProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(
-                    ObservableValue<? extends Number> observableValue,
-                    Number  wasChanging,
-                    Number changing) {
-                lvStudents.setItems(StudentiModel.expandTo((int) sliderStudents.getValue(),fldText.getText())); //tad je released
+        sliderStudents.valueProperty().addListener((observableValue, wasChanging, changing) ->
+                lvStudents.setItems(studentiModel.expandTo((int) sliderStudents.getValue(),fldText.getText())));
 
-            }
-
-        });
-        //da bi radilo i na klik(osim drag-a)
         sliderStudents.addEventFilter(MouseEvent.MOUSE_PRESSED, e -> sliderStudents.setValueChanging(true));
         sliderStudents.addEventFilter(MouseEvent.MOUSE_RELEASED, e -> sliderStudents.setValueChanging(false));
 
@@ -98,11 +87,11 @@ public class Controller  {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/novi.fxml"));
         loader.load();
 
-        noviController = loader.getController();
         novi.setTitle("Unos studenta");
         novi.setScene(new Scene(loader.getRoot(), USE_COMPUTED_SIZE, USE_COMPUTED_SIZE));
         novi.setResizable(false);
         novi.show();
+        lvStudents.setItems(studentiModel.getStudenti());
 
     }
 }

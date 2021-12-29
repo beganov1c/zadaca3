@@ -22,7 +22,7 @@ public class StudentiModel {
     public static ObservableList<String> expandTo(int broj, String zadnji) {
 
         if(broj<studenti.size()) return shrinkTo(broj);
-        for(int i=trenutni; i<broj; i++) {
+        for(int i=trenutni; i<=broj; i++) {
             if(studenti.size()==broj)
                 break;
             dodajStudenta(zadnji);
