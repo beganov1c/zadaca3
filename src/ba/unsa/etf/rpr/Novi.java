@@ -39,7 +39,10 @@ public class Novi {
         });
     }
 
-    public void cancelClick(ActionEvent actionEvent) {
+
+    public void cancelClick(ActionEvent actionEvent){
+        Stage stage = (Stage) cancelBtn.getScene().getWindow();
+        stage.close();
     }
 
     private boolean provjeri(String ime) {return ime.trim().length()>=10;}

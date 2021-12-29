@@ -19,7 +19,7 @@ import java.util.ResourceBundle;
 
 import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
-public class Controller implements Initializable {
+public class Controller  {
     public TextField fldText;
     public Slider sliderStudents;
     public ChoiceBox choiceColor;
@@ -32,10 +32,6 @@ public class Controller implements Initializable {
 
     private StudentiModel studentiModel = new StudentiModel();
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 
     @FXML
     public void initialize() {
