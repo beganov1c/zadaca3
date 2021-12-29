@@ -15,7 +15,6 @@ public class Novi {
     public ProgressBar progressBar;
     public TextField fldIme;
     public Button cancelBtn;
-    private boolean validacija = false;
 
 
 
