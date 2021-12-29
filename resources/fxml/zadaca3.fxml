@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.FXCollections?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import java.lang.String?>
-<?import java.net.URL?>
-<GridPane prefHeight="356.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller">
+
+<GridPane prefHeight="356.0" prefWidth="458.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.Controller">
     <stylesheets>
         <URL value="@/css/zadaca3.css" />
     </stylesheets>
@@ -20,15 +21,15 @@
     <children>
         <HBox maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="482.0" spacing="3.0" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
             <children>
-                <TextField fx:id="fldText" alignment="CENTER_RIGHT" editable="false" maxWidth="-Infinity" prefHeight="25.0" prefWidth="55.0">
+                <TextField fx:id="fldText" alignment="CENTER_RIGHT" editable="false" maxWidth="-Infinity" prefWidth="55.0">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding></TextField>
-                <Slider fx:id="sliderStudents" blockIncrement="1.0" majorTickUnit="15.0" max="15.0" min="5.0" minHeight="-Infinity" minorTickCount="0" prefHeight="37.0" prefWidth="127.0" showTickLabels="true" showTickMarks="true" value="5.0">
+                <Slider fx:id="sliderStudents" blockIncrement="1.0" max="15.0" min="5.0" minHeight="-Infinity" showTickLabels="true" showTickMarks="true" value="5.0">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding></Slider>
-                <ChoiceBox fx:id="choiceColor" minHeight="-Infinity" prefHeight="25.0" prefWidth="146.0">
+                <ChoiceBox fx:id="choiceColor" minHeight="-Infinity" prefWidth="146.0">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
                             <String fx:value="Default" />
@@ -38,7 +39,7 @@
                         </FXCollections>
                     </items>
                 </ChoiceBox>
-                <Button minHeight="-Infinity" mnemonicParsing="false" onAction="#unosClick" prefHeight="25.0" prefWidth="101.0" text="Unos studenta">
+                <Button minHeight="-Infinity" mnemonicParsing="false" onAction="#unosClick" text="Unos studenta">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
