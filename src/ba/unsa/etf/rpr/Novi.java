@@ -15,7 +15,6 @@ public class Novi {
     public ProgressBar progressBar;
     public TextField fldIme;
     public Button cancelBtn;
-    private String student;
     private boolean validacija = false;
 
 
@@ -56,8 +55,7 @@ public class Novi {
         }
         else {
 
-            student=fldIme.getText();
-            dodajStudentaIme(student);
+            dodajStudentaIme(fldIme.getText());
             Stage stage = (Stage) cancelBtn.getScene().getWindow();
             stage.close();
 
